@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int N;
+    scanf("%d", &N); // Read the input amount
+
+    int denominations[] = {500, 100, 50, 20, 10, 5, 2, 1};
+    int size = sizeof(denominations) / sizeof(denominations[0]);
+
+    for (int i = 0; i < size; i++) {
+        int count = N / denominations[i];
+        if (count > 0) {
+            printf("%d: %d\n", denominations[i], count);
+            N -= count * denominations[i];
+        }
+    }
+    return 0;
+}
