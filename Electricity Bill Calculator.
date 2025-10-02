@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int N;
+    float bill, surcharge, total;
+    scanf("%d %f %f", &N, &bill, &surcharge);
+    
+    if(N<=50){
+        bill = 0.50 * N;
+    }
+    else if(N<=150){
+        bill = 0.50*50 + (N-50)*0.75;
+    }
+    else if(N<=250){
+        bill = 0.50*50 + 100*0.75 + (N-150)*1.20; 
+    }
+    else{
+        bill = 0.50*50 + 100*0.75 + 100*1.20 + (N-250)*1.50;
+    }
+    
+    surcharge = bill * 0.20;
+    total = bill + surcharge;
+    printf("%0.2f", total);
+    return 0;
+}
