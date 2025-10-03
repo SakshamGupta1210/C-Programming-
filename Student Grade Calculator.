@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n , a, b ,c , d , e;
+    
+    float y;
+    scanf("%d %d %d %d %d", &a, &b , &c , &d , &e );
+    n = a+b+c+d+e;
+    
+    y = (n/500.0)*100;
+    
+    printf("Percentage = %.2f\n", y );
+    if (y >= 90) {
+        printf("Grade = A\n");
+    } else if (y >= 80) {
+        printf("Grade = B\n");
+    } else if (y >= 70) {
+        printf("Grade = C\n");
+    } else if (y >= 60) {
+        printf("Grade = D\n");
+    } else if (y >= 40) {
+        printf("Grade = E\n");
+    } else {
+        printf("Grade = F\n");
+    }
+return 0;
+}
