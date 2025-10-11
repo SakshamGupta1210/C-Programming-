@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n, first, last;
+    scanf("%d", &n);
+    
+    if(n>=0 && n<=9)
+        printf("%d", n);
+    
+    else{
+        last = n%10;
+        n = n/10;
+        int count = 0, temp = n;
+        while(temp != 0){
+            temp = temp/10;
+            count++;
+        }
+        first = n/pow(10, count-1);
+        n = n%(int)pow(10, count-1);
+        n = last*pow(10, count) + n*10 + first;
+        printf("%d", n);
+    }
+    return 0;
+}
